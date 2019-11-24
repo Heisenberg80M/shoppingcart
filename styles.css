@@ -1,0 +1,114 @@
+.button{
+    border: none;
+    padding: 16px;
+}
+
+.button-red {
+    background-color: rgb(241, 4, 16);
+    border-radius: 50%;
+    padding: 10px;   
+
+}
+
+.button-violet {
+    background-color: rgb(77, 36, 187);
+    border-radius: 50%;
+    padding: 10px;
+
+}
+
+.button-black {
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-white {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-orange {
+    background-color: orange;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-yellow {
+    background-color: yellow;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-navy-blue {
+    background-color: #1D53AE;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-turquoise {
+    background-color: #285A7B;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-beige {
+    background-color: #DAB595;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-sky-blue {
+    background-color: #54C0F9;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-lime-green {
+    background-color: #90FA4D;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-pink {
+    background-color: #EA37B3;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-cream {
+    background-color: #DAB595;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-emerald-green {
+    background-color: #418D65;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-dark-grey {
+    background-color: #6F6975;
+    border-radius: 50%; 
+    padding: 10px;
+}
+
+.button-brown {
+    background-color: #6E502B;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-aqua-marine {
+    background-color: #69DAD1;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.button-light-grey {
+    background-color: #C4C4C4;
+    border-radius: 50%;
+    padding: 10px;
+}
