@@ -10,7 +10,9 @@
  <link rel="stylesheet" href="styles.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
+ <script src="shoppingcart.js"></script>
+ <script src="colourSelector.js"></script>
+ 
 </head>
  <body>
     <div id="content">
@@ -42,39 +44,68 @@
         <p>ONLINE EXCLUSIVE</p>
 
         <span><strong>COLOR: </strong></span>
+        <span id="color"> </strong></span>
         
         <div id="choose-color">
-            <button class="inline-block color-button button-red" onclick="colorSelect('Red');"></button>
-            <button class="inline-block color-button button-violet" onclick="colorSelect('Violet');"></button>
-            <button class="inline-block color-button button-black" onclick="colorSelect('Black');"></button>
-            <button class="inline-block color-button button-white" onclick="colorSelect('White');"></button>
-            <button class="inline-block color-button button-orange" onclick="colorSelect('Orange');"></button>
-            <button class="inline-block color-button button-yellow" onclick="colorSelect('Yellow');"></button>
-            <button class="inline-block color-button button-navy-blue" onclick="colorSelect('Navy Blue');"></button>
-            <button class="inline-block color-button button-turquoise" onclick="colorSelect('Turquoise');"></button>
-            <button class="inline-block color-button button-beige" onclick="colorSelect('Beige');"></button>
-            <button class="inline-block color-button button-sky-blue" onclick="colorSelect('Sky Blue');"></button>
-            <button class="inline-block color-button button-lime-green" onclick="colorSelect('Lime Green');"></button>
+            <button class="inline-block color-button button-red" onclick="chooseColor('Red');"></button>
+            <button class="inline-block color-button button-violet" onclick="chooseColor('Violet');"></button>
+            <button class="inline-block color-button button-black" onclick="chooseColor('Black');"></button>
+            <button class="inline-block color-button button-white" onclick="chooseColor('White');"></button>
+            <button class="inline-block color-button button-orange" onclick="chooseColor('Orange');"></button>
+            <button class="inline-block color-button button-yellow" onclick="chooseColor('Yellow');"></button>
+            <button class="inline-block color-button button-navy-blue" onclick="chooseColor('Navy Blue');"></button>
+            <button class="inline-block color-button button-turquoise" onclick="chooseColor('Turquoise');"></button>
+            <button class="inline-block color-button button-beige" onclick="chooseColor('Beige');"></button>
+            <button class="inline-block color-button button-sky-blue" onclick="chooseColor('Sky Blue');"></button>
+            <button class="inline-block color-button button-lime-green" onclick="chooseColor('Lime Green');"></button>
             <br>
-            <button class="inline-block color-button button-pink" onclick="colorSelect('Pink');"></button>
-            <button class="inline-block color-button button-cream" onclick="colorSelect('Cream');"></button>
-            <button class="inline-block color-button button-emerald-green" onclick="colorSelect('Emerald Green');"></button>
-            <button class="inline-block color-button button-dark-grey" onclick="colorSelect('Dark Grey');"></button>
-            <button class="inline-block color-button button-brown" onclick="colorSelect('Brown');"></button>
-            <button class="inline-block color-button button-aqua-marine" onclick="colorSelect('Aqua Marine');"></button>
-            <button class="inline-block color-button button-light-grey" onclick="colorSelect('Light Grey');"></button>
+            <button class="inline-block color-button button-pink" onclick="chooseColor('Pink');"></button>
+            <button class="inline-block color-button button-cream" onclick="chooseColor('Cream');"></button>
+            <button class="inline-block color-button button-emerald-green" onclick="chooseColor('Emerald Green');"></button>
+            <button class="inline-block color-button button-dark-grey" onclick="chooseColor('Dark Grey');"></button>
+            <button class="inline-block color-button button-brown" onclick="chooseColor('Brown');"></button>
+            <button class="inline-block color-button button-aqua-marine" onclick="chooseColor('Aqua Marine');"></button>
+            <button class="inline-block color-button button-light-grey" onclick="chooseColor('Light Grey');"></button>
 
         </div>
         <p><strong>Size Guide</strong></p>
         <span><strong>Your Custom Fit</strong></span>
         <div>
                 <button id="quantity" class="quantityBtn"><strong>0</strong></button>
-                <button id = "addToCart" class="addToCartBtn" data-toggle="modal" data-target="#myModal" onclick="updateQuant();"><strong>Add to Cart</strong></button>
+                <button id = "addToCart" class="addToCartBtn" data-toggle="modal"><strong>Add to Cart</strong></button>
 
-        </div>
+                 <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+    
+                        <span class="close">&times;</span>
+    
+                        <h5>Please add the quantity of the item you have selected</h5>
+                        <div float="center">
+                            <span id="color2" style=" margin: 60px;"></span>
+                            <button id="minus-button" class="minus-button" data-toggle="modal" onclick="removeitem()"><strong>-</strong></button>
+                            <span id="amount" style="font-size: 30px; margin: 15px;">0</span>
+                            <span><button id="plus-button" class="plus-button" data-toggle="modal" onclick="additem()"><strong>+</strong></button></span>
+                            <br><br>
+                            <button id="agree-button" style="float: right; margin:5px;" class="agree-button" data-toggle="modal" onclick="agree()"><strong>Agree</strong></button>
+                            <button id="cancel-button" style="float: right; margin:5px;" class="cancel-button" data-toggle="modal" onclick="cancel()"><strong>Cancel</strong></button>
+    
+                        </div>
+                    </div>
+                </div>
+
+                <script src="modal.js"></script>
+            </div>
         <div>
             <hr>
             <p><strong>DETAILS</strong></p>
+
+            <div id ="selections">
+
+
+            </div>
         </div>
             
         <br>
