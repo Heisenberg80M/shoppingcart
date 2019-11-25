@@ -3,47 +3,57 @@
 /*-- 23/11/2019 -->*/
 
 var  items = 0;
+var itemsInCart = 0;
 
-
-/*increments the cart items when + button is pressed*/
 function additem() {
     items++;
-    document.getElementById("itemst").innerHTML = items;
+    itemsInCart++;
+    document.getElementById("items").innerHTML = items;
 }
 
-/*decrements the cart items when - button is pressed*/
 function removeitem() {
-    items = items < 1 ? 0 : --items;
+    if (items > 0) {
+         --items;
+        }
     document.getElementById("items").innerHTML = items;
 }
 
-/*closes popup modal and resets items to zero when cancel button is pressed*/
 function cancel() {
+    document.getElementById("items").innerHTML = "0";
     items = 0;
-    document.getElementById("items").innerHTML = items;
     modal.style.display = "none";
 }
-/*closes popup modal, proceeds to checkout and shows details of selected items */
+
 function agree() {
-    document.getElementById("quantityBtn").innerHTML = items;
-    document.getElementById("addToCartBtn").innerHTML = "Check out Now";
-    /*-----------------------------------------------------------------------*/
-    /*--Add details--*/
-    var i = 0;
-    for (i = 0; i < items; i++) {
-        /*Create element creates whatever is in <>*/
-        var newBtn = document.createElement("Button");
-        /*Add a class defined in css*/
-        newBtn.classList.add("color-button");
-        /*Generate the button colour class. class names are '-' delimited (no spaces) and are in all small letters, which shouldn't matter since javascript but don't care to experiment further*/
-        var btnColor = "button-" + document.getElementById("color").innerHTML;
-        btnColor = btnColor.toLowerCase().replace(" ", "-");
-        newBtn.classList.add(btnColor);
-        /*Add the newly created element to our detail division.*/
-        document.getElementById("selections").appendChild(newBtn);
+    document.getElementById("quantity").innerHTML = itemsInCart;
+    
+    /*--Add requested items to cart--*/
+    if(document.getElementById("colorModal")!="Please choose a color"){
+
+        document.getElementById("addToCart").innerHTML = "Check out Now"; //only update if colour has been selected
+        var i = 0;
+        for (i = 0; i < items; i++) {
+            
+            var addedItem = document.createElement("Button"); //Create a button element
+            var addedItemColor = "button-" + document.getElementById("color").innerHTML.toLowerCase().replace(" ", "-"); //fetch button class
+
+            //add relevant classes to button
+            addedItem.classList.add("inline-block"); 
+            addedItem.classList.add("color-button");
+            addedItem.classList.add(addedItemColor);
+
+            
+            document.getElementById("selections").appendChild(addedItem); //add Item to selections div in details 
     }
+}
     /*-----------------------------------------------------------------------*/
     items = 0;
     modal.style.display = "none";
 
 }
+
+function updateCart(){
+    document.querySelector("items").innerText = "0";
+    document.getElementById("items").innerHTML = "0";
+}
+

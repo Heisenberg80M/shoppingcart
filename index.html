@@ -8,10 +8,10 @@
  <!-- Bootstrap -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="styles.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- <script src="shoppingcart.js"></script>
+ 
  <script src="colourSelector.js"></script>
+ <script src="modal.js"></script>
+ <script src="shoppingcart.js"></script>
  
 </head>
  <body>
@@ -20,9 +20,7 @@
             <h1>HICKIES Originals</h1>
         </header>
 
-        <div>
-            
-            <!-- Stars-->
+        <div>     <!-- Div for the rating/stars-->
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
@@ -34,7 +32,7 @@
 
         <hr>
 
-        <div class="column">
+        <div class="column">  <!-- Div for the prices/discount-->
             <h2 id ="column" style = "color:red">$14.99 &nbsp;&nbsp;&nbsp;
                 <span class="text-muted" style = "font-size: small;">$17.99</span> &nbsp;&nbsp;&nbsp;
                 <span class="text-muted" style = "font-size: small;" ><strong>25% OFF</strong></span>
@@ -44,7 +42,7 @@
         <p>ONLINE EXCLUSIVE</p>
 
         <span><strong>COLOR: </strong></span>
-        <span id="color"> </strong></span>
+        <span id="color"> </span>
         
         <div id="choose-color">
             <button class="inline-block color-button button-red" onclick="chooseColor('Red');"></button>
@@ -71,41 +69,67 @@
         <p><strong>Size Guide</strong></p>
         <span><strong>Your Custom Fit</strong></span>
         <div>
+            <div class ="mainButtons">
                 <button id="quantity" class="quantityBtn"><strong>0</strong></button>
-                <button id = "addToCart" class="addToCartBtn" data-toggle="modal"><strong>Add to Cart</strong></button>
-
-                 <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-                    <!-- Modal content -->
-                    <div class="modal-content">
-    
-                        <span class="close">&times;</span>
-    
-                        <h5>Please add the quantity of the item you have selected</h5>
-                        <div float="center">
-                            <span id="color2" style=" margin: 60px;"></span>
-                            <button id="minus-button" class="minus-button" data-toggle="modal" onclick="removeitem()"><strong>-</strong></button>
-                            <span id="amount" style="font-size: 30px; margin: 15px;">0</span>
-                            <span><button id="plus-button" class="plus-button" data-toggle="modal" onclick="additem()"><strong>+</strong></button></span>
-                            <br><br>
-                            <button id="agree-button" style="float: right; margin:5px;" class="agree-button" data-toggle="modal" onclick="agree()"><strong>Agree</strong></button>
-                            <button id="cancel-button" style="float: right; margin:5px;" class="cancel-button" data-toggle="modal" onclick="cancel()"><strong>Cancel</strong></button>
-    
-                        </div>
-                    </div>
-                </div>
-
-                <script src="modal.js"></script>
+                <button id = "addToCart" class="addToCartBtn" data-toggle="modal" onclick="updateCart()"><strong>Add to Cart</strong></button>
             </div>
-        <div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+
+                    <span class="close">&times;</span>
+
+                    <h6 style="margin:auto">Please add the quantity of the item you have selected</h6>
+                    <div float="center" style="margin:auto">
+                        <span id="colorModal"> Please choose a color</span>
+                        <button id="minus-button" class="minus-button" data-toggle="modal" onclick="removeitem()"><strong>-</strong></button>
+                        <button id="items" class = "items">0</button>
+                        <span><button id="plus-button" class="plus-button" data-toggle="modal" onclick="additem()"><strong>+</strong></button></span>
+                    </div>
+
+                    <div style="margin:auto">
+                        <button id="agree-button"  class="agree-button" data-toggle="modal" onclick="agree()"><strong>Agree</strong></button>
+                        <button id="cancel-button"  class="cancel-button" data-toggle="modal" onclick="cancel()"><strong>Cancel</strong></button>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+                // Get the button that opens the modal
+                var btn = document.getElementById("addToCart");
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
+
+                
+            </div>
+        <div style="margin:auto">
             <hr>
             <p><strong>DETAILS</strong></p>
 
-            <div id ="selections">
-
-
-            </div>
+            <div id ="selections"></div>
         </div>
             
         <br>

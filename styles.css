@@ -1,140 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*color_button_selection*/
 
+.color-button {
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.color-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px #4d535c;
+}
+
+/*Styling for the color buttons*/
 .button-red {
     background-color: rgb(241, 4, 16);
-    border-radius: 50%;
-    padding: 10px;   
-
 }
 
 .button-violet {
     background-color: rgb(77, 36, 187);
-    border-radius: 50%;
-    padding: 10px;
-
 }
 
 .button-black {
     background-color: black;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-white {
     background-color: white;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-orange {
     background-color: orange;
-    border-radius: 50%;
-    padding: 10px;
+
 }
 
 .button-yellow {
     background-color: yellow;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-navy-blue {
     background-color: #1D53AE;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-turquoise {
     background-color: #285A7B;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-beige {
     background-color: #DAB595;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-sky-blue {
     background-color: #54C0F9;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-lime-green {
     background-color: #90FA4D;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-pink {
     background-color: #EA37B3;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-cream {
     background-color: #DAB595;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-emerald-green {
     background-color: #418D65;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-dark-grey {
     background-color: #6F6975;
-    border-radius: 50%; 
-    padding: 10px;
 }
 
 .button-brown {
     background-color: #6E502B;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-aqua-marine {
     background-color: #69DAD1;
-    border-radius: 50%;
-    padding: 10px;
 }
 
 .button-light-grey {
     background-color: #C4C4C4;
-    border-radius: 50%;
+}
+
+/*Styling for buttons on the main screen*/
+.mainButtons{
     padding: 10px;
+    margin: 10px;
+    font-size: 16px;
 }
 
 .quantityBtn{
-    background-color: white;
     border: black;
-    box-shadow: 0 0 0 1px black;
+    background-color: white;
+    border:2px solid black;
     border-radius: 24px;
-    font-size: 16px;
     width: 70px;
     height: 50px;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
 }
 
 .addToCartBtn{
-    background-color: black;
     color: white;
-    border: none;
+    border: none; /*hide button outline*/
+    background-color: black;
     border-radius: 25px;
-    font-size: 16px;
     width: 200px;
     height: 50px;
     text-align: center;
-    padding: 10px;
-    margin: 10px;
 }
 
+
+/*Modal formating*/
+/*Majority of this code is sourced from w3schools*/
 #content {
     margin: auto;
     padding: 10px;
@@ -144,73 +129,37 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-/* The Modal (background) */
 
+
+/* The Modal (background) */
 .modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
+    display: none;  /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1;   /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
+    width: 100%;  /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);/* Black w/ opacity */
 }
-/* Modal Content */
 
+/* Modal Content */
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 15% auto;
     padding: 10px;
-    border: 1px solid black;
-    max-width: 550px;
-    height: 160px;
-}
-/* The Close Button */
-
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    border: 2px solid black;
+    width: 450px;
+    height: 180px;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.myBtn {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 50px/36px;
-    font-size: 16px;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-}
 
 .minus-button {
     text-align: center;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     font-size: 40px;
     background-color: black;
     color: white;
@@ -220,51 +169,38 @@ body {
 .plus-button {
     text-align: center;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     font-size: 40px;
     background-color: black;
     color: white;
     width: 50px;
 }
 
+.items{
+    background-color: white;
+    border: none;
+    font-size: 25px; 
+    margin: 15px;
+}
+
 .agree-button {
     text-align: center;
     border: 1px solid green;
-    border-radius: 100px;
-    font-size: 10px;
-    background-color: rgba(75, 151, 75, 0.5);
+    border-radius: 8px;
+    font-size: 13px;
+    background-color: rgba(14, 119, 14, 0.5);
     color: black;
-    width: 60px;
-    height: 30px;
+    width: 70px;
+    height: 40px;
 }
 
 .cancel-button {
     text-align: center;
     border: 1px solid red;
-    border-radius: 100px;
-    font-size: 10px;
-    background-color: rgba(182, 88, 88, 0.5);
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: rgba(236, 5, 5, 0.5);
     color: black;
-    width: 60px;
-    height: 30px;
-}
-/*color_button_selection*/
-
-.color-button {
-    border: none;
-    padding: 14px;
-    border-radius: 50%;
-    margin: 8px;
-    font-size: 16px;
-}
-
-.select_color {
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-}
-
-.color-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgb(255, 255, 255), 0 0 0 4px #4d535c;
+    width: 70px;
+    height: 40px;
 }
