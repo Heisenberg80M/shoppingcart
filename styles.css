@@ -1,7 +1,11 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-/*color_button_selection*/
+
+.greyedouttext{
+    color:grey
+
+}
 
 .color-button {
     border: none;
