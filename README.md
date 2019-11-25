@@ -1,2 +1,3 @@
 # shoppingcart
-Zaio shopping cart
+Zaio shopping cart developed for the first deliverable
+
