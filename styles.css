@@ -114,6 +114,7 @@ body {
 .addToCartBtn{
     color: white;
     border: none; /*hide button outline*/
+    font-weight: bold;
     background-color: black;
     border-radius: 25px;
     width: 200px;

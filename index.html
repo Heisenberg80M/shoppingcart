@@ -3,18 +3,16 @@
 
 <head>
  <title>HICKIES Originals</title>
- <!-- Font Awesome Icon Library -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <!-- Bootstrap -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="styles.css">
  
  <script src="colourSelector.js"></script>
- <script src="modal.js"></script>
+
  <script src="shoppingcart.js"></script>
  
 </head>
- <body>
+ <body onload ="createColorClasses()">  
     <div id="content">
         <header>
             <h1>HICKIES Originals</h1>
@@ -26,16 +24,16 @@
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-            <span class="text-muted">&nbsp; &nbsp; &nbsp; 1,293 reviews</span>
+            <span class="greyedouttext">&nbsp; &nbsp; &nbsp; 1,293 reviews</span>
             <div class="column"></div>
         </div>
 
         <hr>
 
         <div class="column">  <!-- Div for the prices/discount-->
-            <h2 id ="column" style = "color:red">$14.99 &nbsp;&nbsp;&nbsp;
-                <span class="text-muted" style = "font-size: small;">$17.99</span> &nbsp;&nbsp;&nbsp;
-                <span class="text-muted" style = "font-size: small;" ><strong>25% OFF</strong></span>
+            <h2><span id = "price" style = "color:red">$14.99 &nbsp;&nbsp;&nbsp;</span>
+                <span id = "full-price"  class="greyedouttext" style = "font-size: 17px;">$17.99</span> &nbsp;&nbsp;&nbsp;
+                <span class="greyedouttext" style = "font-size: 15px;" ><strong>25% OFF</strong></span>
             </h2>
         </div>
 
@@ -71,7 +69,7 @@
         <div>
             <div class ="mainButtons">
                 <button id="quantity" class="quantityBtn"><strong>0</strong></button>
-                <button id = "addToCart" class="addToCartBtn" data-toggle="modal" onclick="updateCart()"><strong>Add to Cart</strong></button>
+                <button id = "addToCart" class="addToCartBtn" data-toggle="modal" onclick="updateCart()">Add to Cart</button>
             </div>
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -121,8 +119,28 @@
                 }
             </script>
 
+            <div id="myCheckoutModal" class="modal">
 
+                <!-- Modal content -->
+                <div class="modal-content">
 
+                    <span class="close">&times;</span>
+
+                    <h6 style="margin:auto">Shopping Cart</h6>
+                    <div  id ="cartItems" float="center" style="margin:auto">
+                        <span id="checkoutModal"> Please choose a color</span>
+                        
+                        <span><button id="plus-button" class="plus-button" data-toggle="modal" onclick="additem()"><strong>+</strong></button></span>
+                    </div>
+
+                    <div style="margin:auto">
+                        <button id="agree-button"  class="agree-button" data-toggle="modal" onclick="agree()"><strong>Agree</strong></button>
+                        <button id="cancel-button"  class="cancel-button" data-toggle="modal" onclick="cancel()"><strong>Cancel</strong></button>
+                    </div>
+
+                    
+                </div>
+            </div>
                 
             </div>
         <div style="margin:auto">
@@ -138,6 +156,7 @@
         <div>   
             <p><strong>Need Help?</strong> </p>
             <p><strong>Shipping & Returns</strong></p>
+            
         </div>
     </div>
     
