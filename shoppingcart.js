@@ -27,22 +27,26 @@ class Color {
         return this.colorPrice;
     }
 
+    get colorName(){
+        return this.colorID;
+    }
+
     get colorFullPriceGet() {
         return (this.colorPrice*1.25).toFixed(2);
     }
 
     get button() {
-        let btnName = this.colorID.toLowerCase().replace(" ","-");
-        return "<button class='inline-block color-button button-" + btnName + "' onclick=colorSelect('" + this.colorID + "');></button>";
+        let addedItem = "<button class='inline-block color-button button-"+ this.colorID.toLowerCase().replace(" ","-")  + "' onclick=colorSelect('" + this.colorID + "');></button>";
+        
         //var addedItem = document.createElement("Button"); //Create a button element
         //var addedItemColor = "button-" + colorID.innerHTML.toLowerCase().replace(" ", "-"); //fetch button class
 
         /*add relevant classes to button
         addedItem.classList.add("inline-block"); 
         addedItem.classList.add("color-button");
-        addedItem.classList.add(addedItemColor);
+        addedItem.classList.add(addedItemColor);*/
     
-        return addedItem;*/
+        return addedItem;
     }
 }
 
@@ -88,6 +92,7 @@ function cancel() {
     document.getElementById("items").innerHTML = "0";
     items = 0;
     modal.style.display = "none";
+    checkOutModal.style.display = "none";
 }
 
 function agree() {
@@ -96,7 +101,7 @@ function agree() {
 
         
         document.getElementById("addToCart").innerHTML = "Check out Now"; //only update if colour has been selected
-        document.querySelector("#addToCart").dataset.target = "#myCheckoutModal";
+        document.querySelector("#addToCart").dataset.target = "myCheckoutModal";
         
         let c = document.getElementById("colorModal").innerHTML;
         colorclasses[c].quantitySet = items;
@@ -122,7 +127,7 @@ function agree() {
 
                     buttonsInCart += colorclasses[a].button;
                     dicountedTotal += colorclasses[a].colorPriceGet;
-                    total += colorclasses[a].colorFullPriceGet;
+                    total += colorclasses[a].colorFullPriceGet; //not working for some reason
                 }
             }
         }
@@ -150,16 +155,45 @@ function agree() {
 
 function updateCart(){
 
+    var quant;
+    var color1;
+    var unitCost;
+    var totalCost;
+    var tableContent;
+
     if(document.getElementById("colorModal")!="Please choose a color"){
         document.getElementById("items").innerHTML = "0";
     }
     else{
         document.getElementById("items").innerHTML = colorclasses[document.getElementById("colorModal")].quantityGet;
-        document.getElementById("selections").appendChild(document.getElementById("colorModal"));
     }
     //let c = document.getElementById("colorModal").innerHTML;
     
     //document.getElementById("items").innerHTML = "0";
+
+    total = 0;
+    dicountedTotal = 0;
+    for (const b of colors) {
+        if(colorclasses[b].quantityGet!=0){
+
+            quant = "<span>"+colorclasses[b].quantityGet+"</span>";
+            color1 = "<span>"+colorclasses[b].colorName+"</span>";
+            unitCost = "<span>R"+colorclasses[b].colorPrice+"</span>";
+            totalCost = "<span>R"+(colorclasses[b].colorPrice*colorclasses[b].quantityGet)+"</span>"
+
+            /*for(i=1; i<=colorclasses[a].quantityGet; i++){
+                buttonsInCart += colorclasses[a].button;
+                dicountedTotal += colorclasses[a].colorPriceGet;
+                total += colorclasses[a].colorFullPriceGet; //not working for some reason
+            }*/
+
+            colorRow = "<p>"+quant+color1+unitCost+totalCost+"</p>";
+            tableContent+=colorRow;
+            
+        }
+    }
+
+    document.getElementById("checkOutTable").innerHTML=tableContent;
 }
 
 
